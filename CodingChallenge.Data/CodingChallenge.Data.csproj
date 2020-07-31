@@ -89,6 +89,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>strings.en.resx</DependentUpon>
     </Compile>
+    <Compile Include="Utils\FunctionHelper.cs" />
     <Compile Include="Utils\LenguageHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

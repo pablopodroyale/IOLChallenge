@@ -2,6 +2,7 @@
 using CodingChallenge.Data.Classes.Interfaces;
 using CodingChallenge.Data.Classes.Utils;
 using CodingChallenge.Data.Classes.WriteStringStrategys;
+using CodingChallenge.Data.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -46,16 +47,15 @@ namespace CodingChallenge.Data.Classes
                    
                     //Agrupo por lista de formas
                     var forms = formas.Where(f => f.GetType().Name.ToString() == item.Key.Split('.').ToList().Last()).ToList();
+                   
                     sb.Append(ObtenerLinea(forms));
-
+                    sb.Append(_stringStrategy.BreakLine());
                 } 
 
                 // FOOTER
-                sb.Append($"{" " + _stringStrategy.BreakLine()}{Resources.strings.Report_Footer + ":"}{_stringStrategy.BreakLine()}{formas.Count() + " " + Resources.strings.Shapes} ");
-         
-                //sb.Append(formas.Count() + " " + _stringStrategy.WriteLine(Resources.strings.Shapes) + " ");
-                sb.Append((Resources.strings.Perimeter) + " " + (formas.Sum(x => x.CalcularPerimetro())).ToString("#.##") + " ");
-                sb.Append(Resources.strings.Area +  " " + (formas.Sum(x => x.CalcularArea())).ToString("#.##"));
+                sb.Append($"{Resources.strings.Report_Footer + ":"}{_stringStrategy.BreakLine()}{formas.Count()} {Resources.strings.Shapes} ");
+                sb.Append((FunctionHelper.UppercaseFirst(Resources.strings.Perimeter)) + " " + (formas.Sum(x => x.CalcularPerimetro())).ToString("#.##") + " ");
+                sb.Append(FunctionHelper.UppercaseFirst(Resources.strings.Area) +  " " + (formas.Sum(x => x.CalcularArea())).ToString("#.##"));
             }
             return sb.ToString();
         }
@@ -74,7 +74,7 @@ namespace CodingChallenge.Data.Classes
         {
             if (formas.Count() > 0)
             {
-                return $"{formas.Count()} {TraducirForma(formas)} | {Resources.strings.Area} {formas.Sum(x => x.CalcularArea()):#.##} | {Resources.strings.Perimeter} {formas.Sum(x => x.CalcularPerimetro()):#.##}";
+                return $"{formas.Count()} {FunctionHelper.UppercaseFirst(TraducirForma(formas))} | {Resources.strings.Area} {formas.Sum(x => x.CalcularArea()):#.##} | { FunctionHelper.UppercaseFirst(Resources.strings.Perimeter)} {formas.Sum(x => x.CalcularPerimetro()):#.##} ";
             }
 
             return string.Empty;
