@@ -29,6 +29,7 @@ namespace CodingChallenge.Data.Classes
 
         /// <summary>
         /// Este seria un metodo generico para devolver el tipo solicitado de IEmitible como string, PDf o Email, etc..
+        /// Tendria que cambiar la firma de imprimir y de los tests
         /// </summary>
         /// <param name="formas"></param>
         /// <param name="idioma"></param>
@@ -53,15 +54,9 @@ namespace CodingChallenge.Data.Classes
         /// <param name="formas"></param>
         /// <param name="idioma"></param>
         /// <returns></returns>
-        public string GetImpresionStr(List<IFormaGeometrica> formas, int idioma)
+        public string GetImpresionStr(List<IFormaGeometrica> formas)
         {
-            //Recupero el lenguaje para volverselo a setear
-            CultureInfo cultureInfo = LenguageHelper.GetCurrentCulture();
-            LenguageHelper.SwitchThreadLenguage(idioma);
-            string ret = new EmitibleString(_stringStrategy).Emitir(formas);
-            //Le vuelvo a setear el lenguaje
-            LenguageHelper.SetCultureInfo(cultureInfo);
-            return ret;
+           return  new EmitibleString(_stringStrategy).Emitir(formas);
         }
              
     }
