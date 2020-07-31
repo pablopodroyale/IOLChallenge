@@ -30,3 +30,7 @@ Lo que te encontrás al levantar la .sln es una librería con el objeto de negoc
 La resolución es libre y cómo encarar el problema queda en el criterio de quien lo resuelva!
 
 **¡¡Buena suerte!!**
+
+Se modificó la firma de imprimir para que reciba una colección generica de IFormaGeometrica. Se agregaron archivos de recursos por idioma. Para mantener la generalización, debe 
+matchear el nombre de la clase en Inglés con la key en el archivo de recursos. Se deja preparado para una generalización del metodo imprimir, para que devuelva un emitible de tipo Generics para que pueda ser impresión de PDF, String, etc..
+Se adjunta diagrama de secuencia y de clases. En el caso de clases es el generado por VS2019 que tiene bastantes issues.
