@@ -63,50 +63,6 @@ namespace CodingChallenge.Data.Classes
             LenguageHelper.SetCultureInfo(cultureInfo);
             return ret;
         }
-
-        /// <summary>
-        /// Escribe una oracion con este modelo:
-        /// x forma/s Area xxx Perimetro xxx
-        /// </summary>
-        /// <param name="cantidad"></param>
-        /// <param name="area"></param>
-        /// <param name="perimetro"></param>
-        /// <param name="tipo"></param>
-        /// <param name="idioma"></param>
-        /// <returns></returns>
-        private string ObtenerLinea(List<IFormaGeometrica> formas)
-        {
-            if (formas.Count() > 0)
-            {
-                return $"{formas.Count()} {FunctionHelper.UppercaseFirst(TraducirForma(formas))} | {Resources.strings.Area} {formas.Sum(x => x.CalcularArea()):#.##} | { FunctionHelper.UppercaseFirst(Resources.strings.Perimeter)} {formas.Sum(x => x.CalcularPerimetro()):#.##} ";
-            }
-
-            return string.Empty;
-        }
-
-        private string TraducirForma(List<IFormaGeometrica> formas)
-        {
-            var clas = formas.First().GetType().Name.ToString();
-            /* Reference to your resources class -- may be named differently in your case */
-            ResourceManager MyResourceClass = new ResourceManager(typeof(Resources.strings));
-
-            ResourceSet resourceSet = MyResourceClass.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
-            IDictionaryEnumerator dictNumerator = resourceSet.GetEnumerator();
-            string res = null;
-            // Get all string resources
-            while (dictNumerator.MoveNext() && res == null)
-            {
-                // Only string resources
-                if (dictNumerator.Value is string)
-                {
-                    var key = (string)dictNumerator.Key;
-                    if (key == clas)
-                    {
-                        res = (string)dictNumerator.Value;
-                    }
-                }
-            }
-            return formas.Count() == 1 ? res : string.Format(res + "{0}", "s");
-        }
+             
     }
 }
