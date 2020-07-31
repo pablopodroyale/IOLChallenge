@@ -31,6 +31,7 @@ La resolución es libre y cómo encarar el problema queda en el criterio de quie
 
 **¡¡Buena suerte!!**
 
+### Aclaraciones de la resolución
 Se modificó la firma de imprimir para que reciba una colección generica de IFormaGeometrica. Se agregaron archivos de recursos por idioma. Para mantener la generalización, debe 
 matchear el nombre de la clase en Inglés con la key en el archivo de recursos. Se deja preparado para una generalización del metodo imprimir, para que devuelva un emitible de tipo Generics para que pueda ser impresión de PDF, String, etc..
 Se adjunta diagrama de secuencia y de clases. En el caso de clases es el generado por VS2019 que tiene bastantes issues.
