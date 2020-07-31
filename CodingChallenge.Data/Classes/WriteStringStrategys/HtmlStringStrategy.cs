@@ -13,7 +13,7 @@ namespace CodingChallenge.Data.Classes.WriteStringStrategys
             return "<br/>";
         }
 
-        public char WriteHeader(string text)
+        public string WriteHeader(string text)
         {
             throw new NotImplementedException();
         }

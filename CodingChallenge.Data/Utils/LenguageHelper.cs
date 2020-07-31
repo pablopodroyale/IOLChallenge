@@ -27,5 +27,15 @@ namespace CodingChallenge.Data.Classes.Utils
             }
 
         }
+
+        public static CultureInfo GetCurrentCulture()
+        {
+            return Thread.CurrentThread.CurrentCulture;
+        }
+
+        public static void SetCultureInfo(CultureInfo cultureInfo)
+        {
+            Thread.CurrentThread.CurrentUICulture = cultureInfo;
+        }
     }
 }

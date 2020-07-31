@@ -22,7 +22,7 @@ namespace CodingChallenge.Data.Classes
 
         public static string Imprimir(List<IFormaGeometrica> formas, int idioma)
         {
-            var ret = new EmiFactory(new HtmlStringStrategy()).GetEmitibleStr(formas,idioma);
+            var ret = new EmiFactory(new HtmlStringStrategy()).GetImpresionStr(formas,idioma);
             return ret;
          
         }

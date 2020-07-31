@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CodingChallenge.Data.Classes.Interfaces
+namespace CodingChallenge.Data.Classes.Enum
 {
-    public interface  IEmitible
+    public enum TypeEmitibleEnum
     {
-        void Emitir();
+        STR = 1,
+        PDF = 2,
+        EMAIL = 3
     }
 }

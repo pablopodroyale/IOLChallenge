@@ -10,6 +10,6 @@ namespace CodingChallenge.Data.Classes.WriteStringStrategys
     {
         string BreakLine();
         string WriteLine(string text);
-        char WriteHeader(string empty_List);
+        string WriteHeader(string text);
     }
 }

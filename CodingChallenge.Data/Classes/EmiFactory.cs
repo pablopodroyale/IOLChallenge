@@ -16,48 +16,52 @@ namespace CodingChallenge.Data.Classes
 {
     public class EmiFactory
     {
-        private readonly  IStringStrategy _stringStrategy;
+        private readonly IStringStrategy _stringStrategy;
         public EmiFactory(IStringStrategy stringStrategy)
         {
             _stringStrategy = stringStrategy;
         }
-        public static IEmitible GetEmitible()
+        public static IEmitible<string> GetEmitible()
         {
 
             return null;
         }
 
-        public  string GetEmitibleStr(List<IFormaGeometrica> formas, int idioma)
+        /// <summary>
+        /// Este seria un metodo generico para devolver el tipo solicitado de IEmitible como string, PDf o Email, etc..
+        /// </summary>
+        /// <param name="formas"></param>
+        /// <param name="idioma"></param>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public IEmitible<T> GetImpresionGeneric<T>(List<IFormaGeometrica> formas, int idioma, T type)
         {
+            IEmitible<T> emitible = null;
+            //Visual studio crashea evaluando generics 
+            //switch (type)
+            //{
+            //    default:
+            //}
+
+            return emitible;
+
+        }
+
+        /// <summary>
+        /// Este seria un metodo provisorio. Deberia devolver un emitible del Tipo solicitado: Email, Pdf, String..etc
+        /// </summary>
+        /// <param name="formas"></param>
+        /// <param name="idioma"></param>
+        /// <returns></returns>
+        public string GetImpresionStr(List<IFormaGeometrica> formas, int idioma)
+        {
+            //Recupero el lenguaje para volverselo a setear
+            CultureInfo cultureInfo = LenguageHelper.GetCurrentCulture();
             LenguageHelper.SwitchThreadLenguage(idioma);
-            var sb = new StringBuilder();
-
-            if (!formas.Any())
-            {
-                sb.Append(_stringStrategy.WriteLine(Resources.strings.Empty_List));
-            }
-            else
-            {
-                // Hay por lo menos una forma
-                // HEADER
-                sb.Append(_stringStrategy.WriteLine(Resources.strings.Report_Header));
-                var shapesInList = formas.GroupBy(x => x.GetType().ToString()).ToList();
-                foreach (var item in shapesInList)
-                {
-                   
-                    //Agrupo por lista de formas
-                    var forms = formas.Where(f => f.GetType().Name.ToString() == item.Key.Split('.').ToList().Last()).ToList();
-                   
-                    sb.Append(ObtenerLinea(forms));
-                    sb.Append(_stringStrategy.BreakLine());
-                } 
-
-                // FOOTER
-                sb.Append($"{Resources.strings.Report_Footer + ":"}{_stringStrategy.BreakLine()}{formas.Count()} {Resources.strings.Shapes} ");
-                sb.Append((FunctionHelper.UppercaseFirst(Resources.strings.Perimeter)) + " " + (formas.Sum(x => x.CalcularPerimetro())).ToString("#.##") + " ");
-                sb.Append(FunctionHelper.UppercaseFirst(Resources.strings.Area) +  " " + (formas.Sum(x => x.CalcularArea())).ToString("#.##"));
-            }
-            return sb.ToString();
+            string ret = new EmitibleString(_stringStrategy).Emitir(formas);
+            //Le vuelvo a setear el lenguaje
+            LenguageHelper.SetCultureInfo(cultureInfo);
+            return ret;
         }
 
         /// <summary>
@@ -70,7 +74,7 @@ namespace CodingChallenge.Data.Classes
         /// <param name="tipo"></param>
         /// <param name="idioma"></param>
         /// <returns></returns>
-        private  string ObtenerLinea(List<IFormaGeometrica> formas)
+        private string ObtenerLinea(List<IFormaGeometrica> formas)
         {
             if (formas.Count() > 0)
             {
@@ -80,7 +84,7 @@ namespace CodingChallenge.Data.Classes
             return string.Empty;
         }
 
-        private  string TraducirForma(List<IFormaGeometrica> formas)
+        private string TraducirForma(List<IFormaGeometrica> formas)
         {
             var clas = formas.First().GetType().Name.ToString();
             /* Reference to your resources class -- may be named differently in your case */
@@ -90,7 +94,7 @@ namespace CodingChallenge.Data.Classes
             IDictionaryEnumerator dictNumerator = resourceSet.GetEnumerator();
             string res = null;
             // Get all string resources
-            while (dictNumerator.MoveNext() && res == null )
+            while (dictNumerator.MoveNext() && res == null)
             {
                 // Only string resources
                 if (dictNumerator.Value is string)

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="CodingChallenge.Data.Classes.Interfaces.IFormaGeometrica">
+    <Position X="3.75" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAEIAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Interfaces\IFormaGeometrica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodingChallenge.Data.Classes.FormasGeometricas.Circle">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAIAAAAAAAAAA=</HashCode>
+      <FileName>Classes\FormasGeometricas\Circle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodingChallenge.Data.Classes.FormasGeometricas.Square">
+    <Position X="2.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAIAAAAAAAAAA=</HashCode>
+      <FileName>Classes\FormasGeometricas\Square.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodingChallenge.Data.Classes.FormasGeometricas.TriangleEq">
+    <Position X="6.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAIAAAAAAAAAA=</HashCode>
+      <FileName>Classes\FormasGeometricas\TriangleEq.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodingChallenge.Data.Classes.FormasGeometricas.Trapeze">
+    <Position X="4.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAIAAAAAAAAAA=</HashCode>
+      <FileName>Classes\FormasGeometricas\Trapeze.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodingChallenge.Data.Classes.EmiFactory">
+    <Position X="16.75" Y="0.5" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABABQAAAAAAAAAAAAAACAACAAEAAAAAA=</HashCode>
+      <FileName>Classes\EmiFactory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_stringStrategy" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CodingChallenge.Data.Classes.FormaGeometricaNegocio">
+    <Position X="7.5" Y="0.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\FormaGeometricaNegocio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodingChallenge.Data.Classes.Email" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Classes\Email.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodingChallenge.Data.Classes.Pdf" BaseTypeListCollapsed="true">
+    <Position X="10.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Classes\Pdf.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodingChallenge.Data.Classes.WriteStringStrategys.HtmlStringStrategy" BaseTypeListCollapsed="true">
+    <Position X="13" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAIAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Classes\WriteStringStrategys\HtmlStringStrategy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CodingChallenge.Data.Classes.Interfaces.IEmitible&lt;T&gt;">
+    <Position X="9.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAABAAQAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Classes\Interfaces\IEmitible.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="CodingChallenge.Data.Classes.WriteStringStrategys.IStringStrategy">
+    <Position X="13" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAIAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Classes\Interfaces\IStringStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="CodingChallenge.Data.Classes.Enum.LenguageEnum" Collapsed="true">
+    <Position X="15.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Classes\Enum\LenguageEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CodingChallenge.Data.Classes.Enum.TypeEmitibleEnum" Collapsed="true">
+    <Position X="17" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAIAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Classes\Enum\TypeEmitibleEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

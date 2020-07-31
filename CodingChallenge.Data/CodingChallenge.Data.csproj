@@ -67,18 +67,19 @@
   <ItemGroup>
     <Compile Include="Classes\Email.cs" />
     <Compile Include="Classes\EmiFactory.cs" />
-    <Compile Include="Classes\Enum\FormasEnum.cs" />
+    <Compile Include="Classes\EmitibleString.cs" />
     <Compile Include="Classes\Enum\LenguageEnum.cs" />
+    <Compile Include="Classes\Enum\TypeEmitibleEnum.cs" />
     <Compile Include="Classes\FormaGeometricaNegocio.cs" />
     <Compile Include="Classes\FormasGeometricas\Circle.cs" />
     <Compile Include="Classes\FormasGeometricas\Square.cs" />
     <Compile Include="Classes\FormasGeometricas\Trapeze.cs" />
     <Compile Include="Classes\FormasGeometricas\TriangleEq.cs" />
-    <Compile Include="Classes\Interfaces\Emitible.cs" />
+    <Compile Include="Classes\Interfaces\IEmitible.cs" />
     <Compile Include="Classes\Interfaces\IFormaGeometrica.cs" />
     <Compile Include="Classes\Pdf.cs" />
     <Compile Include="Classes\WriteStringStrategys\HtmlStringStrategy.cs" />
-    <Compile Include="Classes\WriteStringStrategys\IStringStrategy.cs" />
+    <Compile Include="Classes\Interfaces\IStringStrategy.cs" />
     <Compile Include="Resources\strings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -95,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="UML.cd" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
